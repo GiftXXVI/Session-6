@@ -12,17 +12,17 @@
 	<link rel="stylesheet" href="dist/theme/moon.css">
 
 	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="plugin/highlight/tomorrow-night-blue.css">
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape.svg">
 					<h2>Organizing API Endpoints</h2>
 				</section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape1.svg">
 					<h3>Principle 1</h3>
 					<ul>
 						<li>Organize URLs using the resource being accessed or modified.</li>
@@ -40,37 +40,45 @@
 						</li>
 					</ul>
 				</section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape2.svg">
 					<h3>Principle 2</h3>
 					<ul>
 						<li>Maintain a consistent naming scheme.</li>
 						<li> Follow the following guidelines:
 							<ul>
 								<li>Use plural nouns.</li>
-								<li>Limit the number of segments to reduce the length of the addresses.<ul>
-										<li>As a guideline, do not exceed 3 segments in the URL.</li>
-										<li>Good:
-											<pre>
-												<code data-trim data-noescape>
-													/artists/1/shows
-												</code>
-											</pre>
-										</li>
-										<li>
-											Not good:
-											<pre>
-												<code data-trim data-noescape>
-													/artists/1/shows/2/genres
-												</code>
-											</pre>
-										</li>
-									</ul>
-								</li>
 							</ul>
 						</li>
 					</ul>
 				</section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape2.svg">
+					<h3>Principle 2</h3>
+					<ul>
+						<ul>
+							<li>Limit the number of segments to reduce the length of the addresses.<ul>
+									<li>As a guideline, do not exceed 3 segments in the URL.</li>
+									<li>Good:
+										<pre>
+												<code data-trim data-noescape>
+													/artists/1/shows
+												</code>
+											</pre>
+									</li>
+									<li>
+										Not good:
+										<pre>
+												<code data-trim data-noescape>
+													/artists/1/shows/2/genres
+												</code>
+											</pre>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape3.svg">
 					<h3>Principle 3</h3>
 					<ul>
 						<li>Do not include the action in the URL.</li>
@@ -86,7 +94,7 @@
 						</li>
 					</ul>
 				</section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape4.svg">
 					<h3>Summary</h3>
 					<ul>
 						<li>Here are a few examples of endpoints and methods:</li>
@@ -104,6 +112,12 @@
 								</code>
 							</pre>
 						</li>
+					</ul>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape4.svg">
+					<h3>Summary</h3>
+					<ul>
+						<li>Here are a few examples of endpoints and methods:</li>
 						<li>To update a student:
 							<pre>
 								<code data-trim data-noescape>
@@ -120,7 +134,7 @@
 						</li>
 					</ul>
 				</section>
-				<section data-transition="slide">
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape5.svg">
 					<h3>In Flask</h3>
 					<ul>
 						<li>Here are Flask route definitions that demonstrate these principles:</li>
@@ -138,6 +152,12 @@
 								</code>
 							</pre>
 						</li>
+					</ul>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape5.svg">
+					<h3>In Flask</h3>
+					<ul>
+						<li>Here are Flask route definitions that demonstrate these principles:</li>
 						<li>To update a student:
 							<pre>
 								<code data-trim data-noescape>

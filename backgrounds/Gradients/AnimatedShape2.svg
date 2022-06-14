@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="560" preserveAspectRatio="none" viewBox="0 0 1440 560"><g mask="url(&quot;#SvgjsMask1007&quot;)" fill="none"><rect width="1440" height="560" x="0" y="0" fill="url(#SvgjsLinearGradient1008)"></rect><path d="M233.622,646.9C273.91,645.588,308.825,620.309,327.777,584.733C345.619,551.242,341.795,511.731,323.273,478.612C304.241,444.581,272.484,419.546,233.622,416.376C188.245,412.675,137.979,422.591,114.474,461.582C90.426,501.472,103.021,552.052,128.211,591.231C151.243,627.055,191.056,648.286,233.622,646.9" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M1286.1416279062569 285.28773419642516L1329.511600499429 436.5368030468376 1480.7606693498415 393.1668304536655 1437.3906967566693 241.91776160325304z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M377.32027877743997 158.24258144492393L385.068567934638 246.80593176861566 473.63191825832973 239.05764261141763 465.8836291011317 150.49429228772593z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M192.9792060371728 164.4365472009614L93.84673277773683 196.64664029923406 191.72810905486378 329.2403036392517z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float1"></path><path d="M525.3481620316285 28.307333247720923L438.8670011659472 86.51977419310472 520.0637931992655 127.89160615138691z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float2"></path><path d="M818.4270196011935 84.89521811579176L931.5071122296123 135.3709043297894 922.0724557678667 27.532287513451493z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float2"></path></g><defs><mask id="SvgjsMask1007"><rect width="1440" height="560" fill="#ffffff"></rect></mask><linearGradient x1="15.28%" y1="-39.29%" x2="84.72%" y2="139.29%" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient1008"><stop stop-color="#0e2a47" offset="0"></stop><stop stop-color="#00459e" offset="1"></stop></linearGradient><style>
+            @keyframes float1 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-10px, 0)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float1 {
+                animation: float1 5s infinite;
+            }
+
+            @keyframes float2 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-5px, -5px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float2 {
+                animation: float2 4s infinite;
+            }
+
+            @keyframes float3 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(0, -10px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float3 {
+                animation: float3 6s infinite;
+            }
+        </style></defs></svg>
