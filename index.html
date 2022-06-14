@@ -1,40 +1,126 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h2>Organizing API Endpoints</h2>
+				</section>
+				<section>
+					<h3>Principle 1</h3>
+					<ul>
+						<li>Organize URLs using the resource being accessed or modified.</li>
+						<li>The pathname should contain the name of the entity that is being retrieved or manipulated.
+						</li>
+						<li>Examples:
+							<pre>
+								<code data-trim data-noescape>
+									/students
+									/students/1
+									/projects
+									/modules
+								</code>
+							</pre>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Principle 2</h3>
+					<ul>
+						<li>Maintain a consistent naming scheme.</li>
+						<li> Follow the following guidelines:
+							<ul>
+								<li>Use plural nouns.</li>
+								<li>Limit the number of segments to reduce the length of the addresses.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Principle 3</h3>
+					<ul>
+						<li>Do not include the action in the URL.</li>
+						<li>Instead, let the HTTP Message describe the action.</li>
+						<li>
+							Recall that HTTP Methods map to CRUD operations. For example:
+							<ul>
+								<li>GET retrieves resources.</li>
+								<li>POST submits new data to the server.</li>
+								<li>PUT updates existing data.</li>
+								<li>DELETE removes data.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Summary</h3>
+					<ul>
+						<li>Here are a few examples of endpoints and methods:</li>
+						<li>To get a list of students:
+							<pre>
+								<code data-trim data-noescape>
+									GET /students
+								</code>
+							</pre>
+						</li>
+						<li>To create a new student:
+							<pre>
+								<code data-trim data-noescape>
+									POST /students
+								</code>
+							</pre>
+						</li>
+						<li>To update a student:
+							<pre>
+								<code data-trim data-noescape>
+									PATCH /students/1
+								</code>
+							</pre>
+						</li>
+						<li>To delete a student:
+							<pre>
+								<code data-trim data-noescape>
+									DELETE /students/1
+								</code>
+							</pre>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
