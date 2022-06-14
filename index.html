@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -19,10 +19,10 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<section>
+				<section data-transition="slide">
 					<h2>Organizing API Endpoints</h2>
 				</section>
-				<section>
+				<section data-transition="slide">
 					<h3>Principle 1</h3>
 					<ul>
 						<li>Organize URLs using the resource being accessed or modified.</li>
@@ -40,23 +40,41 @@
 						</li>
 					</ul>
 				</section>
-				<section>
+				<section data-transition="slide">
 					<h3>Principle 2</h3>
 					<ul>
 						<li>Maintain a consistent naming scheme.</li>
 						<li> Follow the following guidelines:
 							<ul>
 								<li>Use plural nouns.</li>
-								<li>Limit the number of segments to reduce the length of the addresses.</li>
+								<li>Limit the number of segments to reduce the length of the addresses.<ul>
+										<li>As a guideline, do not exceed 3 segments in the URL.</li>
+										<li>Good:
+											<pre>
+												<code data-trim data-noescape>
+													/artists/1/shows
+												</code>
+											</pre>
+										</li>
+										<li>
+											Not good:
+											<pre>
+												<code data-trim data-noescape>
+													/artists/1/shows/2/genres
+												</code>
+											</pre>
+										</li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 					</ul>
 				</section>
-				<section>
+				<section data-transition="slide">
 					<h3>Principle 3</h3>
 					<ul>
 						<li>Do not include the action in the URL.</li>
-						<li>Instead, let the HTTP Message describe the action.</li>
+						<li>Instead, let the HTTP Method to describe the operation on the resource.</li>
 						<li>
 							Recall that HTTP Methods map to CRUD operations. For example:
 							<ul>
@@ -68,7 +86,7 @@
 						</li>
 					</ul>
 				</section>
-				<section>
+				<section data-transition="slide">
 					<h3>Summary</h3>
 					<ul>
 						<li>Here are a few examples of endpoints and methods:</li>
@@ -97,6 +115,40 @@
 							<pre>
 								<code data-trim data-noescape>
 									DELETE /students/1
+								</code>
+							</pre>
+						</li>
+					</ul>
+				</section>
+				<section data-transition="slide">
+					<h3>In Flask</h3>
+					<ul>
+						<li>Here are Flask route definitions that demonstrate these principles:</li>
+						<li>To get a list of students:
+							<pre>
+								<code data-trim data-noescape>
+									@app.route('/students', methods=['GET'])
+								</code>
+							</pre>
+						</li>
+						<li>To create a new student:
+							<pre>
+								<code data-trim data-noescape>
+									@app.route('/students', methods=['POST'])
+								</code>
+							</pre>
+						</li>
+						<li>To update a student:
+							<pre>
+								<code data-trim data-noescape>
+									@app.route('/students/&lt;int:student_id&gt;', methods=['PATCH'])
+								</code>
+							</pre>
+						</li>
+						<li>To delete a student:
+							<pre>
+								<code data-trim data-noescape>
+									@app.route('/students/&lt;int:student_id&gt;', methods=['DELETE'])
 								</code>
 							</pre>
 						</li>
