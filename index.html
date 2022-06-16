@@ -232,10 +232,60 @@
 						</li>
 					</ul>
 				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape25.svg">
+					<h3>CORS Headers</h3>
+					<ul>
+						<li>CORS headers are used by the server to allow applications of other origins
+							to access our application.</li>
+						<li>Examples:<ul>
+								<li>List of client domains allowed:
+									<pre><code data-trim data-noescape>Access-Control-Allow-Origin: https://udacity.com</code></pre>
+								</li>
+								<li>
+									List of HTTP request types allowed:
+									<pre><code data-trim data-noescape>Access-Control-Allow-Methods: POST, GET, OPTIONS</code></pre>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 			</section>
 			<section>
 				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape15.svg">
-					<h2>Flask Error Handling 🚨</h2>
+					<h2>Flask Error Handling 🧯</h2>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape26.svg">
+					<h3>abort</h3>
+					<ul>
+						<li>HTTP error status codes are typically returned using the <b>abort</b> function.<ul>
+								<li>This function takes the status code as a parameter.</li>
+								<li>Example:<ul>
+										<pre><code data-trim data-noescape>abort(404)</code></pre>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape27.svg">
+					<h3>abort (Example)</h3>
+					<pre>
+						<code data-trim data-noescape>
+						try:
+							db.session.add(student)
+							db.session.refresh(student)
+							student_f = {'id':student.id,'name':student.name}
+							return jsonify({
+								'success': True,
+								'students': student_f,
+								'created': student.id
+							})
+						except SQLAlchemyError as e:
+							print(str(e.__dict__['orig']))
+							db.session.rollback()
+							abort(500)
+						</code>
+					</pre>
 				</section>
 			</section>
 			<section>
