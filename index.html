@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/moon.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/tomorrow-night-blue.css">
@@ -291,6 +293,76 @@
 			<section>
 				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape16.svg">
 					<h2>Unit Testing 🚧</h2>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape28.svg">
+					<h3>Introduction</h3>
+					<p>As with any code you write, you want to test your API to ensure that requests are processed
+						as you expect, the responses sent are correct, and the operations performed on the database
+						are correct and persist.
+					</p>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape29.svg">
+					<h3>Why API Testing</h3>
+					<ul>
+						<li>To confirm expected request handling behavior</li>
+						<li>To confirm success-response structure is correct</li>
+						<li>To confirm expected errors are handled appropriately</li>
+						<li>To confirm CRUD operations persist</li>
+					</ul>
+					<p>In addition, when you update your API, you can easily test all previous functionality.</p>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape30.svg">
+					<h3>UnitTest</h3>
+					<ul class="small">
+						<li>We will be using the unittest library.</li>
+						<li>Steps:
+
+							<ul class="list-group list-group-flush small mt-2">
+								<li class="list-group-item text-light bg-transparent small">Define
+									the test case
+									class for the application (or
+									section of the
+									application).</li>
+								<li class="list-group-item text-light bg-transparent small">Define
+									and implement the setUp function (executed before each test)</li>
+								<li class="list-group-item text-light bg-transparent small">Define
+									the tearDown method (executed after each test)</li>
+								<li class="list-group-item text-light bg-transparent small">Define
+									your tests (function names should begin with "test_")</li>
+								<li class="list-group-item text-light bg-transparent small">Run
+									python test_file_name.py</li>
+							</ul>
+
+						</li>
+					</ul>
+
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape31.svg">
+					<h3>unittest example</h3>
+					<pre>
+						<code data-trim data-noescape>
+							class AppNameTestCase(unittest.TestCase):
+							def setUp(self):
+								self.client = app.test_client
+								pass
+							
+							def tearDown(self):
+								pass
+						</code>
+					</pre>
+				</section>
+				<section data-transition="slide" data-background="backgrounds/Gradients/AnimatedShape32.svg">
+					<h3>unittest example (Continued)</h3>
+					<pre>
+						<code data-trim data-noescape>							
+							def test_behaviour(self):
+								res = self.client().get('/')
+								self.assertEqual(res.status_code, 200)
+							
+							if __name__ == "__main__":
+								unittest.main()
+						</code>
+					</pre>
 				</section>
 			</section>
 			<section>
