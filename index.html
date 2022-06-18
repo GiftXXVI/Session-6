@@ -132,7 +132,7 @@
 									<pre><code data-trim data-noescape>PATCH /students/1</code></pre>
 								</li>
 								<li>Delete Student:
-									<pre><code data-trim data-noescape>DELETE /students</code></pre>
+									<pre><code data-trim data-noescape>DELETE /students/1</code></pre>
 								</li>
 							</ul>
 						</li>
@@ -156,11 +156,11 @@
 						<li>Here are a few routes to demonstrate these principles:</li>
 						<li>
 							Modify Student:
-							<pre><code data-trim data-noescape>@app.route('/students/<int:id>',methods=['PATCH'])</code></pre>
+							<pre><code data-trim data-noescape>@app.route('/students/&lt;int:id&gt;',methods=['PATCH'])</code></pre>
 						</li>
 						<li>
 							Delete Student:
-							<pre><code data-trim data-noescape>@app.route('/students/<int:id>',methods=['DELETE'])</code></pre>
+							<pre><code data-trim data-noescape>@app.route('/students/&lt;int:id&gt;',methods=['DELETE'])</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -279,6 +279,7 @@
 						<code data-trim data-noescape>
 						try:
 							db.session.add(student)
+							db.session.commit()
 							db.session.refresh(student)
 							student_f = {'id':student.id,'name':student.name}
 							return jsonify({
